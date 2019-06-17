@@ -10,7 +10,7 @@ tag:
 
 category: blog
 hidden: false
-author: Zain Patel
+author: zainpatel
 description: "hi"
 ---
 
