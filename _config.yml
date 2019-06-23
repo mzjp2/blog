@@ -104,3 +104,5 @@ plugins:
 
 jekyll-mentions:
     base_url: https://zainp.com
+
+include: ['.well-known/brave-rewards-verification.txt']
