@@ -4,7 +4,7 @@ layout: page
 ---
 ![Profile Image]({{ site.url }}/assets/images/profile_2.jpg)
 
-<p>Hi, I'm Zain (Patel)! I've recently graduated from the University of Cambridge with a mathematics degree and started at <a href="https://www.quantumblack.com">QuantumBlack / McKinsey </a> on the <a href="https://github.com/quantumblacklabs/studio">Studio</a> team in the new QuantumBlack Labs division. It's been great fun so far!</p>
+<p>Hi, I'm Zain (Patel)! I've recently graduated from the University of Cambridge with a mathematics degree and started at <a href="https://www.quantumblack.com">QuantumBlack / McKinsey </a> on the Studio team in the new <a href="https://quantumblack.com/labs">QuantumBlack Labs</a> division. It's been great fun so far!</p>
 
 <p>I've previously interned at Satavia, a small startup in Cambridge aimed at providing digital intelligence to the aviation industry, where I worked on desinging and building their Flights API, which would return the impact on a given flights engine based on the environmental factors the plane encountered on the flight path.</p>
 
