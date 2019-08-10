@@ -3,7 +3,7 @@ name: Zain Patel
 bio: Software Engineer @ QB \\ Maths @ Cambridge
 
 # twitter summary info
-description: A blog about stuff
+description: Zain Patel's personal home page
 
 # if it's an external image, update below for true
 # better with square images
@@ -104,5 +104,3 @@ plugins:
 
 jekyll-mentions:
     base_url: https://zainp.com
-
-include: ['.well-known/brave-rewards-verification.txt']
