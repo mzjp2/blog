@@ -83,3 +83,15 @@ We've got a few ideas for how to improve our model for next months competition, 
 All in all, I've learnt a lot about reinforcement learning and had a lot of fun building and tweaking the model, and of course, racing it. 
 
 I'd like to thank my two colleagues for their help and participation, I wouldn't have been able to do it without them and it wouldn't have been half as much fun without being able to do it together, nor would I have learnt anywhere near as much.
+
+## Update 
+
+Turns out we placed 168th (out of roughly 1,300 teams) and came first in our internal company competition, bagging ourselves some goodies.
+
+We also went to the AWS offices for a meetup centred around Deepracer, and as part of that, had the chance to try our model (where up to this point, had been tested, evaluated and deployed only on virtual cars) on a physical car on the physical track. 
+
+This brought up all sorts of problems and issues that the basic simmulated AWS virtual environment just couldn't cpature, like the glare on the track from the overhead lights and how that translates to the camera feedback and what not. Our model didn't perform anywhere near as well as we'd expected on the physical track, as compared to the virtual one.
+
+It was a great meetup and we had the chance to meet some of the people behind the entire league as well as some of the other people at the top of the leaderboard and learn some tips and tricks that we're excited to try in next months competition.
+
+![](https://imgur.com/UTbjTIg.png)
