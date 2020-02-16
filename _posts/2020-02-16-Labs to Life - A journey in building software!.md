@@ -13,7 +13,7 @@ description: Tune in to the Labs to Life webinar series, where I'll be talking a
 externalLink: https://events.quantumblack.com/labstolifewebinar
 ---
 
-Event website here: https://events.quantumblack.com/labstolifewebinar
+## Event website here: [https://events.quantumblack.com/labstolifewebinar](https://events.quantumblack.com/labstolifewebinar).
 
 ## Thursday 20th February 2020
 ### 12pm - 12:45pm GMT // 7am - 7:45am ET
