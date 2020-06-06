@@ -1,7 +1,7 @@
 ---
 title: "Post mortem debugging sessions with Kedro hooks"
 layout: post
-date: 2020-06-06 01:00
+date: 2020-06-06 19:00
 headerImage: false
 tag:
 - python
