@@ -1,7 +1,7 @@
 ---
-title: "Post mortem debugging sessions with Kedro hooks"
+title: "Post mortem debugging sessions with Kedro hooks :leftwards_arrow_with_hook:"
 layout: post
-date: 2020-06-06 19:00
+date: 2020-06-05 19:00
 headerImage: false
 tag:
 - python
