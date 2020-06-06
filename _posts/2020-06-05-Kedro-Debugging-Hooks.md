@@ -63,3 +63,5 @@ This is actually what lets Python do all those helpful tracebacks when an error 
 So, putting all the above together, we get what we came here for. Since the `Exception` exists in the scope that the hook is executed in, we can pull the `traceback` from this exception, format it and print it to `stdout` so the user has all the details about the error raised. We then provide the traceback object to `pdb.post_mortem`, which looks into the `tb_frame` attribute and recreates the local scope. This means that you have access to the loaded data and all the other goodies within your `node'`s local scope as soon as an exception is raised:
 
 <script src="https://gist.github.com/mzjp2/53eb88c7d388b2f712672ec458780051.js"></script>
+
+![](https://i.imgur.com/xJjmGSg.gif)
