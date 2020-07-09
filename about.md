@@ -6,7 +6,12 @@ layout: page
 
 <p>Hi, I'm Zain (Patel)! I've recently graduated from the University of Cambridge with a mathematics degree and started at <a href="https://www.quantumblack.com">QuantumBlack / McKinsey </a> on the Studio team in the new <a href="https://quantumblack.com/labs">QuantumBlack Labs</a> division. It's been great fun so far!</p>
 
-<p>I've previously interned at Satavia, a small startup in Cambridge aimed at providing digital intelligence to the aviation industry, where I worked on desinging and building their Flights API, which would return the impact on a given flights engine based on the environmental factors the plane encountered on the flight path.</p>
+<p>I've since worked across some of the different product teams, including the open source [Kedro](https://github.com/quantumblacklabs/kedro) project, which is a development workflow framework with significant contributions to [CausalNex](https://github.com/quantumblacklabs/causalnex) which is a toolkit for causal reasoning and 'what-if" analysis using Bayesian networks. I've also worked on one client project, helping a Formula E team win their races using advanced Reinforcement Learning techniques.
+</p>
+
+<p>I'm ana vid open source contributor, contributing to several projects from being a core develop on [Zarr](https://github.com/zarr-developers/zarr-python) to major contributions on [Great Expectations](https://github.com/great-expectations/great_expectations) and contributions to the wider data science tooling ecosystem including Pytorch and various other projects like the popular Go Slack SDK.</p>
+
+<p>I've previously interned at Satavia, a small startup in Cambridge aimed at providing digital intelligence to the aviation industry, where I worked on designing and building their Flights API, which would return the impact on a given flights engine based on the environmental factors the plane encountered on the flight path.</p>
 
 <p>Please feel free to reach out to me for a chat!</p>
 
@@ -16,9 +21,9 @@ layout: page
 
 <ul class="skill-list">
 	<li>Python</li>
+	<li>Pandas, Numpy, Dask</a>
 	<li>Go</li>
-	<li>JavaScript and TypeScript, Node, Express</li>
-	<li>GraphQL, Postgres</li>
+	<li>Django, GraphQL, Postgres</li>
 </ul>
 
 <!-- <h2>Projects</h2>
