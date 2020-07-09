@@ -2,8 +2,7 @@
 title: "Github's secret new user README's :octocat:"
 layout: post
 date: 2020-07-09 22:00
-headerImage: true
-image: https://imgur.com/meBGUIz.png
+headerImage: false
 tag:
 - github
 - feature
@@ -20,6 +19,8 @@ This is what it looks like (from [my current profile](https://github.com/mzjp2))
 ![mzjp2 github profile screenshot](https://imgur.com/I06ZD1l.png)
 
 To get your own, you need to create a new repository in your account with the same name as your account, so in my case, with my account name being [mzjp2](https://github.com/mzjp2) I needed to create a _public_ repository called `mzjp2`, accessible at [github.com/mzjp2/mzjp2](https://github.com/mzjp2/mzjp2) with, at least, a `README.md`.
+
+![new repo creation screen](https://imgur.com/meBGUIz.png)
 
 You can add additional files to your repository (I have a folder of `svg` icons located in there that I use as images in my `README`), but the only thing that ultimately gets rendered is the `README.md`. It follows the same rendering rules and follows the same Github markdown spec as all the other `README`'s you're used to in any other repo.
 
