@@ -20,7 +20,7 @@ Please feel free to reach out to me for a chat!
 
 <ul class="skill-list">
 	<li>Python</li>
-	<li>Pandas, Numpy, Dask</a>
+	<li>Pandas, Numpy, Dask</li>
 	<li>Go</li>
 	<li>Django, GraphQL, Postgres</li>
 </ul>
