@@ -1,5 +1,5 @@
 ---
-title: "How to play Among Us on your Macbook"
+title: "How to play Among Us on your Macbook :video_game:"
 layout: post
 date: 2020-10-02 18:00
 headerImage: false
