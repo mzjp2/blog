@@ -1,5 +1,5 @@
 ---
-title: "Add ordering to your Django-Graphene GraphQL API"
+title: "Add ordering to your Django-Graphene GraphQL API :arrow_down:"
 layout: post
 date: 2020-10-31 20:00
 headerImage: false
