@@ -22,7 +22,7 @@ url: https://zainp.com
 permalink: /:title/
 
 # To enable google analytics, supply your token below
-analytics-google: 'UA-142238841-1'
+analytics-google: "UA-142238841-1"
 
 # To enable piwik tracking, supply your url & site ID below
 # analytics-piwik-url: 'piwik.my-host.com'
@@ -54,12 +54,12 @@ stackoverflow: 9999106/zain-patel
 email: zain.patel06@gmail.com
 
 authors:
-    zainpatel:
-        name: Zain Patel
-        bio: Software Engineer @ QB \\ Maths @ Cambridge
-        external-image: false
-        picture: assets/images/profile.jpg
-        twitter: zainp
+  zainpatel:
+    name: Zain Patel
+    bio: Software Engineer @ QB \\ Maths @ Cambridge
+    external-image: false
+    picture: assets/images/profile.jpg
+    twitter: zainp
 
 # do you want a larger site? change the option below
 # options: [normal, large] | default: normal
@@ -97,11 +97,10 @@ animation: true
 
 plugins:
   - jekyll-seo-tag
-  - jekyll-gist
   - jekyll-feed
   - jemoji
   - jekyll-admin
   - jekyll-redirect-from
 
 jekyll-mentions:
-    base_url: https://zainp.com
+  base_url: https://zainp.com
