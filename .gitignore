@@ -1,0 +1,4 @@
+# generated files and folders
+vendor
+_site
+.sass-cache
