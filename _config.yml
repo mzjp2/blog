@@ -17,21 +17,16 @@ resume-external: true
 resume-url: https://drive.google.com/open?id=1Gte60_NDAb7t6K-s0IhxOi5ErTSwUF46
 
 url: https://zainp.com
-# your url: http://USERNAME.github.io
 
 permalink: /:title/
 
 # To enable google analytics, supply your token below
 analytics-google: "UA-142238841-1"
 
-# To enable piwik tracking, supply your url & site ID below
-# analytics-piwik-url: 'piwik.my-host.com'
-# analytics-piwik-id: 1
-
 # if you don't want comments in your posts, leave categories empty
 disqus:
   shortname: zainp-blog # enter this from your disqus account
-  categories: [blog, project] # only show disqus for posts that have these categories
+  categories: [] # only show disqus for posts that have these categories
 
 # if you don't have any of social below, comment the line
 facebook: ZainDov
@@ -101,6 +96,3 @@ plugins:
   - jemoji
   - jekyll-admin
   - jekyll-redirect-from
-
-jekyll-mentions:
-  base_url: https://zainp.com

@@ -2,7 +2,7 @@
 title: About
 layout: page
 ---
-![Profile Image]({{ site.url }}/assets/images/profile_2.jpg)
+![Profile Image](/assets/images/profile_2.jpg)
 
 Hi, I'm Zain (Patel)! I've recently graduated from the University of Cambridge with a mathematics degree and started at [QuantumBlack](https://quantumblack.com) in the new [QuantumBlack Labs](https://quantumblack.com/labs) division. It's been great fun so far!
 
