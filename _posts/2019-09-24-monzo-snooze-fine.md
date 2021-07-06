@@ -16,8 +16,6 @@ description: "Using Apples new iOS 13 Shortcut Automations alongside IFTTT webho
 
 With Apples new [iOS 13](https://www.apple.com/ios/ios-13/https://www.apple.com/ios/ios-13/) release comes the much-hyped Shortcut automations, that let you run shortcuts based on a number of triggers.
 
-![](https://s3.gifyu.com/images/2A66A882-7E1C-42D3-9904-BACA447C82FC.gif)
-
 This got me thinking about what I could use and after reading a few posts in the [Monzo Community Forum](https://community.monzo.comhttps://community.monzo.com) I decided to try my hand at creating a shortcut that would run automatically whenever I snoozed my alarm in the morning and transfer £1 to a designated pot in my Monzo accocunt. This post details how I set it up.
 
 ## Creating an IFTTT webhook
