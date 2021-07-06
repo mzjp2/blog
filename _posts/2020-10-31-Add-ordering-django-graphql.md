@@ -26,7 +26,7 @@ query {
 }
 ```
 
-to get post titles ordered in descending order of when they were created. This works okay, as long as you don't intend to use the filtering mechanism in `django-graphene`/`django-filter`: where you can do:
+to get post titles ordered in descending order of when they were created. This works okay, as long as you don't intend to use the filtering mechanism in `django-graphene`/`django-filter`, where you can specify django-style filters that are converted automatically to GraphQL arguments for filtering:
 
 
 ```python
@@ -82,22 +82,25 @@ class OrderedDjangoFilterConnectionField(DjangoFilterConnectionField):
 and you use it like so in your query schema:
 
 ```python
-class PostQuery:
+class PostQuery(graphene.ObjectType):
     posts = OrderedDjangoFilterConnectionField(
         PostNode,
         orderBy=graphene=graphene.List(of_type=graphene.String)
-        )
+    )
 ```
 
-This differs from the StackOverflow answer in that it lets you sort by custom fields that you may have implemented on your GraphQL API, but not on your model (for example, in my case, it was the dowmload count of a post - which isn't stored on the model). Let's walk through what this does.
+This differs from the StackOverflow answer in that it lets you sort by custom fields that you may have implemented on your GraphQL API, but not on your model (in my case, it was the dowmload count of a post - which isn't stored on the model) as long as you build a relevant annotation method for it. Let's walk through what this does:
 
-When the GraphQL query is sent _without_ the `orderBy` argument then the `if order` black is never entered and we return the `queryset` as is from `DjangoFilterConnectionField`'s `resolve_queryset` method.
+* We call the parent `DjangoFilterConnectionField`'s `resolve_queryset` method to get the queryset with all the magic filtering taken care of already, this ensures we don't have to do any work ourselves or re-build any logic.
+* If the GraphQL query is sent _without_ the `orderBy` argument then we never enter the  `if order` block and instantly return the `queryset` as-is from above.
+* If the GraphQL query is sent _with_ the `orderBy` argument (say `fieldName`) then we convert this to snake case (`field_name`) and do the following (note: if the value is instead a list, we convert each value to snake case and do the following to each value)
+* We look at the queryset for a method called `annotate_{field_name}` on it
+    * If this method exists, we call it, expecting the result to be the same queryset-type, but with an additional annotation on it called `field_name` (this is what lets us do the ordering) and replace the queryset with the newly-annotated queryset.
+    * If the method doesn't exist, then we leave the queryset as-is and do continue with the rest of the logic
+* We call the `order_by` argument on the queryset we have with the values from the `orderBy` snake-cased arguments provided, this works on native db fields as normal with Django and also works with any graphene fields you've built that have custom resolvers as long as you write a mathching annotation method on the queryset for that field.
+* We also call `distinct` on the queryset to ensure we get sensical results, given some of Django's quirks with `order_by` and `ManyToMany` fields.
 
-Then the GraphQL query is sent _with_ the `orderBy` argument (say, set to `fieldName`) then we convert this to snake case (`field_name`). If the value is instead a list, then we do this for each value in the list.
-
-We then look at the model manager for a method called `annotate_field_name`. If this method exists, we call it. If it doesn't, then we continue. We return the `queryset` got from `DjangoFilterConnectionField`'s `resolve_queryset` method with the `order_by` method called on it with the snake-cased values from the GraphQL API. We also call `distinct` because of various quirks with ordering and `ManyToMany` fields with Django.
-
-This works as you would expect if you were ordering by a model field, say the post title, but the real pickle is in ordering on a custom field you've created on your GraphQL API, but not on the model, in my case the post download count. This is what the `annotate_field_name` method is for. My Post Manager looks like:
+This works as you would expect if you were ordering by a model field, say the post title, but the real beauty is in ordering on a custom field you've created on your GraphQL API, but not on the model, in my case the post download count. This is what the `annotate_field_name` method is for. My Post Manager looks like:
 
 
 ```python
@@ -107,3 +110,44 @@ class PostManager(models.Manager):
 ```
 
 which annotates my queryset with a `download_count` field, that I can then order against.
+
+You'd also ideally re-use this annotation within your GraphQL resolver rather than writing any new logic. For example:
+
+```python
+class PostNode:
+    download_count = graphene.Int()
+
+    @staticmethod
+    def resolve_download_count(root: Post) -> int:
+        return (
+            Post.objects.filter(id=root.id)
+            .annotate_download_count()
+            .get(id=root.id)
+            .download_count
+        )
+
+```
+
+or if you want to optimise things when resolving multiple posts (e.g to list them all):
+
+```python
+# schema.py
+
+from .types import PostNode
+
+class PostQuery(graphene.ObjectType):
+    posts = OrderedDjangoFilterConnectionField(PostNode)
+
+    @staticmethod
+    def resolve_posts():
+        return Post.objects.all().annotate_download_count()
+
+# types.py
+
+class PostNode:
+    download_count = graphene.Int()
+
+    @staticmethod
+    def resolve_download_count(root: Post) -> int:
+        return root.download_count # has been annotated from the `posts` resolver
+```
