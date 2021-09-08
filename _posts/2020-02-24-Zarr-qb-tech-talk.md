@@ -7,6 +7,7 @@ tag:
 - python
 - zarr
 - presentation
+- open-source
 
 category: blog
 author: zainpatel

@@ -4,7 +4,7 @@ layout: post
 date: 2021-07-02 19:00
 headerImage: false
 tag:
-- finance
+  - finance
 
 category: blog
 author: zainpatel
@@ -15,11 +15,11 @@ Too often, when people are asking what to do with their bonuses, the advice give
 
 ## Pre-requisites
 
-* You are employed and have your taxes operated under [PAYE](https://www.gov.uk/income-tax/how-you-pay-income-tax) with regular monthly salary payments
-* Your monthly gross salary is above the [Upper Earnings Limit (UEL](https://www.gov.uk/government/publications/rates-and-allowances-national-insurance-contributions/rates-and-allowances-national-insurance-contributions) for National Insurance (NI). As of April 2021 this is currently £4189. This is roughly correlated with the higher rate tax threshold
-* Your employer matches pension contributions holistically or anually rather than monthly
-* Your employer operates a salary sacrifice scheme
-* Your employer allows you to change your salary sacrifice contribution over the course of a year
+- You are employed and have your taxes operated under [PAYE](https://www.gov.uk/income-tax/how-you-pay-income-tax) with regular monthly salary payments
+- Your monthly gross salary is above the [Upper Earnings Limit (UEL](https://www.gov.uk/government/publications/rates-and-allowances-national-insurance-contributions/rates-and-allowances-national-insurance-contributions) for National Insurance (NI). As of April 2021 this is currently £4189. This is roughly correlated with the higher rate tax threshold
+- Your employer matches pension contributions holistically or anually rather than monthly
+- Your employer operates a salary sacrifice scheme
+- Your employer allows you to change your salary sacrifice contribution over the course of a year
 
 ## How does this work?
 
@@ -31,23 +31,23 @@ Additionally, salary sacrifice works by reducing your salary in exchange for you
 
 ### The typical situation
 
-A typical agreement between an employee and employer will have the employee agree to `x%` salary sacrifice as a pension contribution which is then applies to each monthly payslip. As an example, take Bob who earns £96k and salary sacrifices 20% to his pension. His monthly payslip looks like:
+A typical agreement between an employee and employer will have the employee agree to `x%` salary sacrifice as a pension contribution which is applied to each monthly payslip. As an example, take Bob who earns £96k and salary sacrifices 20% to his pension. His monthly payslip looks like:
 
-* Gross: £8,000
-* Pension contribution (SS): £1,600
-* Taxable income: £6,400
-* Tax: £1,512.66
-* NI: £451.26 (`(6400 - 4189) * 2/100 + (4189 - 797) * 12/100`)
-* Net: £4426.08
+- Gross: £8,000
+- Pension contribution (SS): £1,600
+- Taxable income: £6,400
+- Tax: £1,512.66
+- NI: £451.26 (`(6400 - 4189) * 2/100 + (4189 - 797) * 12/100`)
+- Net: £4426.08
 
 Had he not made any pension contributions, it would look like:
 
-* Gross: £8,000
-* Pension contribution (SS): £0
-* Taxable income: £8,000
-* Tax: £2152.66
-* NI: £483.26 (`(8000 - 4189) * 2/100 + (4189 - 797) * 12/100`)
-* Net: £5364.08
+- Gross: £8,000
+- Pension contribution (SS): £0
+- Taxable income: £8,000
+- Tax: £2152.66
+- NI: £483.26 (`(8000 - 4189) * 2/100 + (4189 - 797) * 12/100`)
+- Net: £5364.08
 
 you can see that the salary sacrifice has reduced the tax paid substantially (all at 40%) whereas has barely impacted the amount of NI paid (most of it as 2%). This is because the NI payment drops from 12% to 2% when you cross the upper earning threshold, so you're getting _less_ relief.
 
@@ -57,11 +57,11 @@ Given that tax is paid holistically, we don't care about the monthly tax positio
 
 Bob makes a total pension contribution of £19,200. If we split that across three months instead of 12 (we need each monthly payslip to be above the minimum wage for a months full-time work), those three months look like:
 
-* Gross: £8000
-* Pension contribution (SS): £6,400
-* Taxable income: £1,600
-* Tax: (doesn't matter)
-* NI: £96.36
+- Gross: £8000
+- Pension contribution (SS): £6,400
+- Taxable income: £1,600
+- Tax: (doesn't matter)
+- NI: £96.36
 
 and the rest of the 9 months look like the situation above where he doesn't make any pension contributions whatsoever.
 
@@ -75,13 +75,12 @@ That means Bob puts the exact same amount of money into his pension at the end o
 
 This ignores:
 
-* employer contributions which you might be missing out on depending on how your employer calculates their matching (mine is non-contributory, so I don't miss out on anything there)
-* A cash-flow crunch, there are 3 months in which you see much less come in from your payslip which you need to conciously cover from the increased monthly payments in other months. You could also price in the time-value of money (though that is _very_ nitpicky)
-* If you choose to back-load the pension then you miss out on 'time in the market' and potential gains, but ensure that you remove the risk of 'over-contributing to your pension' early-on and removing flexibility had you been let-go or some emergency come up since pension contributions are irrecoverable
-* If you choose to front-load the pension, then you gain 'time in the market' which is a good thing but lose out on flexibility (say an emergency comes up later in the year where you wish you could then turn your contribution down).
+- employer contributions which you might be missing out on depending on how your employer calculates their matching (mine is non-contributory, so I don't miss out on anything there)
+- A cash-flow crunch, there are 3 months in which you see much less come in from your payslip which you need to conciously cover from the increased monthly payments in other months. You could also price in the time-value of money (though that is _very_ nitpicky)
+- If you choose to back-load the pension then you miss out on 'time in the market' and potential gains, but ensure that you remove the risk of 'over-contributing to your pension' early-on and removing flexibility had you been let-go or some emergency come up since pension contributions are irrecoverable
+- If you choose to front-load the pension, then you gain 'time in the market' which is a good thing but lose out on flexibility (say an emergency comes up later in the year where you wish you could then turn your contribution down).
 
 The last 3 points can be mitigated somewhat by spreading Bob's three months across the tax year, but may not be possible depending on your level of pension contribution and salary (maybe only one month is enough to make your full pension contribution).
-
 
 ## Conclusion
 
