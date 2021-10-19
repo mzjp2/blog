@@ -1,11 +1,12 @@
 ---
-title: "Run an OpenSSH server as a bastion on a Kubernetes Pod"
+title: "Run an OpenSSH server as a bastion on a Kubernetes Pod :globe_with_meridians:"
 layout: post
 date: 2021-10-19 23:00
 headerImage: false
 tag:
   - kubernetes
   - open-source
+  - aws
 
 category: blog
 author: zainpatel
@@ -26,20 +27,25 @@ I spent a good half-week searching (I'm a Kubernetes newbie) for how to implemen
 
 First off, I needed to spin a pod up that runs an [OpenSSH](https://www.openssh.com) server, preferrably with the `authorized_keys` baked into the image already. To do this I used this super simple Dockerfile from [corbinu/ssh-server](https://github.com/corbinu/ssh-server).
 
-1. Clone the repository down:
+
+### Step 1
+
+Clone the repository down:
 
 ```
 git clone https://github.com/corbinu/ssh-server.git
 ```
 
-2. Add the relevant public keys to the `authorized_keys` file at the root of the repository (create it if required)
+### Step 2
+
+Add the relevant public keys to the `authorized_keys` file at the root of the repository (create it if required)
 
 ```
 echo "public_key_1" > authorized_keys
 echo "public_key_2" >> authorized_keys
 ```
 
-3. Modify the configuration within `sshd_config` to ensure that the SSH connection doesn't time out after 1 minute (as it does by default):
+Modify the configuration within `sshd_config` to ensure that the SSH connection doesn't time out after 1 minute (as it does by default):
 
 ```
 ClientAliveInterval 30
@@ -47,6 +53,8 @@ ClientAliveCountMax 5
 ```
 
 for a timeout of `30 * 5` seconds. Modify as appropriate.
+
+### Step 3
 
 4. Build the docker image, tag it with your relevant repository tag (I use Amazon [ECR](https://aws.amazon.com/ecr/)) and push it to an appropriate registry
 
@@ -57,21 +65,27 @@ docker push account_id.amazon.ecr.io/repo/app-ssh-server:latest
 
 Alternatively, you could leave it as-is and simply use the `corbinu/ssh-server` image from DockerHub, but will need to configure the `authorized_keys` by `kubectl exec -it <pod-name> -- /bin/bash` and editing the file directly, and will mean that you aren't able to configure `sshd_config`
 
-5. Spin up a Kubernetes pod with your pre-baked image:
+### Step 4
+
+Spin up a Kubernetes pod with your pre-baked image:
 
 ```
 kubectl run app-ssh-server --image account_id.amazon.ecr.io/repo/app-ssh-server:latest --port 22 --restart Never --namespace app-maintenance
 ```
 
-6. Expose this Kubernetes pod to the outside world using a Load Balancer (your cluster must be configured to talk to some Cloud Provider to create the necessary resources):
+### Step 5
+
+Expose this Kubernetes pod to the outside world using a Load Balancer (your cluster must be configured to talk to some Cloud Provider to create the necessary resources):
 
 ```
 kubectl expose pod app-ssh-server --namespace app-maintenance --port 22
 ```
 
-7. If you monitor your services with `kubectl get svc -n app-maintenance`, you should see a service dedicated to your pod with an external IP provisoned.
+### Step 6
 
-8. For best security practices, edit the configuration of this created service to whitelist certain IP addresses
+If you monitor your services with `kubectl get svc -n app-maintenance`, you should see a service dedicated to your pod with an external IP provisoned.
+
+For best security practices, edit the configuration of this created service to whitelist certain IP addresses
 
 ```
 kubectl edit svc/app-ssh-server --namespace app-maintenance
@@ -79,4 +93,6 @@ kubectl edit svc/app-ssh-server --namespace app-maintenance
 
 using (for example) `sourceLoadBalancerRage` under the `spec` key.
 
-9. Connect to your SSH server using `ssh <external-ip>` and optionally forward some ports using `-L` or the `LocalForward` configuration
+### Testing
+
+Connect to your SSH server using `ssh <external-ip>` and optionally forward some ports using `-L` or the `LocalForward` configuration
