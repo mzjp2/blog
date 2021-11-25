@@ -4,10 +4,10 @@ layout: post
 date: 2019-11-17 01:00
 headerImage: false
 tag:
-- url
-- Go
-- http
-- API
+  - url
+  - go
+  - http
+  - API
 
 category: blog
 author: zainpatel
@@ -38,11 +38,9 @@ I didn't make use of Go's concurrency pattern through this. At least, not direct
 
 This in particular, blew my mind. With Python, when building an API, you use something like [Flask](https://flask.palletsprojects.com/en/1.1.x/) or [Django](https://www.djangoproject.com). Flask is my poison of choice, and it comes with a development web server for you to use within development. This seems fairly reasonable, on the face of it. At least, it certainly did to me. It does mean that when you want to run your webserver in production you need to get yourself a proper web server, probably something like nginX or Apache.
 
+With Go, the default HTTP webserver that ships with Go's built-in `net/http` package _is_ production-grade. In fact, I believe [dl.google.com](https://dl.google.com) is just `net/http`. In hindsight, that makes perfect sense. If you're going to ship a http server, you might as well (in true Go developer fashion) make it super performant, secure and production ready.
 
-With Go, the default HTTP webserver that ships with Go's built-in `net/http` package *is* production-grade. In fact, I believe [dl.google.com](https://dl.google.com) is just `net/http`. In hindsight, that makes perfect sense. If you're going to ship a http server, you might as well (in true Go developer fashion) make it super performance, secure and production ready.
-
-Admittedly, the service I've built isn't *truly* production ready, I need to build in some timeouts and configs available in `http.Server` to make sure that it's resilient against the mean mean people of the internet, but other than that, it also makes going from dev to prod really easy amd makes writing Docker containers for both environments really easy.
-
+Admittedly, the service I've built isn't _truly_ production ready, I need to build in some timeouts and configs available in `http.Server` to make sure that it's resilient against the mean mean people of the internet, but other than that, it also makes going from dev to prod really easy amd makes writing Docker containers for both environments really easy.
 
 ## Using postgres
 
