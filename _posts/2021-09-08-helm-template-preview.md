@@ -5,6 +5,7 @@ date: 2021-09-08 11:00
 tag:
   - open-source
   - helm
+  - kubernetes
   - go
 hidden: true
 projects: true
