@@ -1,6 +1,6 @@
 # main text of home
 name: Zain Patel
-bio: Dev @ Maven \\ ex-QB \\ Maths @ Cam
+bio: quant @ maven \\ maths @ cambridge
 
 # twitter summary info
 description: Zain Patel's personal home page
@@ -51,7 +51,7 @@ email: zain.patel06@gmail.com
 authors:
   zainpatel:
     name: Zain Patel
-    bio: Software Engineer @ QB \\ Maths @ Cambridge
+    bio: quant @ Maven
     external-image: false
     picture: assets/images/profile.jpg
     twitter: zainp
